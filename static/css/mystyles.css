@@ -1,0 +1,126 @@
+/*My styles*/
+
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	color:rgb(248, 229, 157);
+	background-color: rgb(5, 34, 96);
+}
+
+li.Flash{
+	color: rgb(255, 250, 250);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+}
+
+
+.errors {
+	color: rgb(255, 250, 250);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+}
+
+.text-muted{
+	color: #BCBBBB;
+}
+
+.text-thin{
+	font-weight: 100;
+}
+
+.title-super{
+	font-size: 40px;
+}
+
+.modal-content{
+	font-family: serif;
+}
+
+a.items:hover{
+	color: red;
+}
+
+a {
+	color: rgb(207, 255, 217);
+	text-decoration: none;
+}
+
+a:hover {
+	color: rgb(206, 223, 255);
+}
+
+a:link {
+	text-decoration: none;
+}
+
+.categories {
+	color: rgb(207, 255, 217);
+	font-size: 15px;
+}
+
+.family, .family_list {
+	color: rgb(206, 223, 255);
+}
+
+
+span.family:hover {
+    color: rgb(207, 255, 217);
+}
+
+
+img {
+	max-width: 100%;
+}
+
+button, input, textarea, select{
+
+	background-color: rgba(0, 0, 0, 0.98);
+	padding:8px 13px;
+	font-size:17px;
+	border-radius:10px;
+}
+
+
+.ItemName{
+	font-size: 3em;
+}
+
+.ItemDescription{
+	font-family: cursive;
+	font-size: 1.5em;
+}
+
+h2 {
+	display: inline-block;
+
+
+}
+
+h3, .h3 {
+	font-size: 20px;
+	color: rgb(255, 170, 52);
+	display: inline-block;
+	color: rgb(205, 0, 0);
+}
+
+
+.creator {
+	padding-right: 20px;
+	margin-top: -20px;
+	text-align: right;
+	float:right;
+}
+
+.creator img {
+	width: 100px;
+	border-radius: 50%;
+}
+
+.creator figcaption {
+	font-size: 14px;
+	color: rgb(255, 250, 250);
+	font-weight: 400;
+	margin-top: -20px;
+}
+

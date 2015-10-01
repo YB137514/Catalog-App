@@ -1,0 +1,17 @@
+{% extends "header.html" %}
+   {% block categories %}
+    {% endblock %}
+      {% block items %}
+        {% endblock %}
+
+{% block new_item %}
+        <script>
+        function myFunction(){
+        alert('You are not authorized to edit this item.\
+        Please create your own item in order to edit');
+        window.location.replace('{{url_for('AllCategories')}}');}
+           { myFunction( ) }
+
+         </script>
+   
+{% endblock new_item %}

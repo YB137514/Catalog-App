@@ -1,0 +1,56 @@
+
+{% extends "header.html" %}
+
+	{% block add_item %}
+ <div class="row">
+  <div class="col-md-6">
+  </div>
+  <div class="col-md-6">
+    <a href = {{url_for('newItem')}}> Add item </a>
+  </div>
+</div>
+{% endblock add_item %}
+
+
+
+
+{% block categories %}
+ {{ super() }}
+
+
+{% for category in categories %}
+
+
+
+<p><a href = {{
+    url_for(
+    'SpecificCategory', 
+    category_name = category.name)}}
+<br>
+ <h3>{{category.name}}</h3>
+
+</a></p>
+
+
+
+{% endfor %}
+{% endblock %}
+
+{% block items %}
+    <h2 class = "items"> 
+ Taxonomic Rank: Family </h2> &nbsp; <h3> (Recently added items) </h3>
+
+{% for item in items %}
+
+<p><a href = {{
+    url_for(
+    'SpecificItem', 
+    category_name = item.category.name, item_name = item.name)}}>
+<h3> <span class = "family"> {{item.name}} <span> </h3>
+
+</a> &nbsp;
+<span class = "categories" > {{item.category.name}}  </span>
+</p>
+
+{% endfor %}
+{% endblock %}

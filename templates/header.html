@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content ="IE=edge">
+  <meta name = "viewport" content = "width=device-width,initial-scale=1">
+  <title>Catalog</title>
+  <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/mystyles.css">
+  <script type="text/javascript" src="/static/js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+ <header> 
+  <div class="container">
+
+   <div class="row">
+    <div class="col-md-6">
+      {% block login %}
+
+      {%if 'username' not in session %}
+      <a href="{{url_for('showLogin')}}"> 
+       <button> Login </button>
+     </a>
+     {% else %}
+     <a href="{{url_for('disconnect')}}">
+       <button> Logout </button>
+     </a>
+     {% endif %}
+     {% endblock login %}
+   </div>
+
+
+
+   <div class="col-md-6 text-right text-uppercase">
+    <h1 class = " title-super text-thin">Endangered Animals</h1>
+    <h3>United States</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    {% block latestItems %}
+    {% endblock latestItems %}
+  </div>
+</div>
+<br>
+<br>
+
+
+{% block add_item %}
+{% endblock add_item %}
+
+
+
+</div>
+</header>
+
+<div class="container">
+  <div class ="row">
+    <div class = "col-md-12">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+        {% for message in messages %}
+        <li class = "Flash"> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+ <div class ="row">
+  <div class = "col-md-6">
+    {% block categories %}
+    <h2> Taxonomic Rank: Order </h2>
+    <br>
+    {% endblock %}
+  </div>
+  <div class = "col-md-6">
+    {% block items %}
+    {% endblock %}
+  </div>
+</div>
+
+<div class ="row">
+  <div class = "col-md-6">
+    {% block new_item %}
+    {% endblock new_item %}
+  </div>
+  <div class = "col-md-6">
+  </div>
+</div>
+
+<div class ="row">
+  <div class = "col-md-6">
+    {% block display_item %}
+    {% endblock display_item %}
+  </div>
+  <div class = "col-md-6">
+  </div>
+</div>
+
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

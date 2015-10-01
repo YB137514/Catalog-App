@@ -1,0 +1,27 @@
+{% extends "private_categories.html" %}
+{% block latestItems %}
+<a href="{{url_for('AllCategories')}}">
+ Recently added items
+</a>
+{% endblock latestItems %}
+
+{% block items %}
+     <h2 class = "items"> 
+     {{category.name}} &nbsp; &#40;{{numItems[0]}} families &#41; </h2>
+    <br>
+
+{% for item in items %}
+
+
+
+<p><a href = {{
+    url_for(
+    'SpecificItem', 
+    category_name = category.name, item_name = item.name)}}>
+	<h3><span class = "family">{{item.name}}<span></h3></a></p>
+
+
+
+{% endfor %}
+
+{% endblock %}

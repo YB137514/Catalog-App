@@ -1,0 +1,56 @@
+{% extends "header.html" %}
+
+
+{% block latestItems %}
+<figure class="creator">
+ {% if creator.name != 'Default' %}
+ <figcaption> Creator: {{creator.name}}</figcaption>
+ <img src="{{creator.picture}}">
+ {% endif %}
+</figure>
+<a href="{{url_for('AllCategories')}}">
+ Latest Items
+</a>
+{% endblock latestItems %}
+
+{% block categories %}
+{% endblock %}
+{% block items %}
+{% endblock %}
+
+{% block display_item %}
+
+
+
+
+
+
+<div>
+
+
+  <p class= "ItemName">{{item.name}}</p>
+
+  {% for pic in pics %}
+  <p><img src="/{{pic.picture}}" > </p>
+  {% endfor %}
+
+  <p class = "ItemDescription">{{item.description}}</p>
+
+</a></p>
+
+<p><a href = '{{
+  url_for( 
+  'editItem',
+  item_name = item.name)}}'
+  > Edit </a></p>
+
+  <p><a href = '{{
+   url_for( 
+   'deleteItem',
+   item_name = item.name,
+   category_name = category.name)}}'
+   > Delete </a></p>
+
+ </div>
+
+ {% endblock display_item %}
