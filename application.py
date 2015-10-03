@@ -2,6 +2,7 @@
 import os
 from flask import Flask, render_template, request, redirect, jsonify, url_for
 from flask import flash, send_from_directory
+from flask.ext.seasurf import SeaSurf
 from sqlalchemy import create_engine, asc, desc, func
 from sqlalchemy.orm import sessionmaker
 from database_schema import Category, Base, Item, User, Pictures
@@ -22,6 +23,7 @@ UPLOAD_FOLDER = 'static/uploads/'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'JPG', 'jpeg', 'gif'])
 
 app = Flask(__name__)
+csrf = SeaSurf(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
@@ -49,6 +51,7 @@ def showLogin():
 
 
 # Google connect
+@csrf.exempt
 @app.route('/gconnect', methods=['POST'])
 def gconnect():
     # Validate state token
@@ -58,8 +61,8 @@ def gconnect():
         return response
     # Obtain authorization code
     code = request.data
-    print code
-    print "authorization code is %s" % code
+    # print code
+    # print "authorization code is %s" % code
 
     try:
         # Upgrade the authorization code into a credentials object
@@ -194,6 +197,7 @@ def gdisconnect():
 
 
 # Facebook connect:
+@csrf.exempt
 @app.route('/fbconnect', methods=['POST'])
 def fbconnect():
     if request.args.get('state') != login_session['state']:
@@ -379,9 +383,8 @@ def newItem():
         session.add(newItem)
         session.commit()
 
-        print "The name printed on the form is %s" % form.name.data
-
-        print "This is my list: %s" % Mylist
+        # print "The name printed on the form is %s" % form.name.data
+        # print "This is my list: %s" % Mylist
         for filename, form_name in Mylist:
             newPic = Pictures(
                 item=newItem,

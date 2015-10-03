@@ -12,6 +12,7 @@ pip install ipython
 pip install flask-bootstrap
 pip install Flask-Script
 pip install WTForms
+pip install flask-seasurf
 
 
 su postgres -c 'createuser -dRS vagrant'

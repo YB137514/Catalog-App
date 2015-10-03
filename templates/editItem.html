@@ -9,7 +9,7 @@
 {% block new_item %}
 
 
-<h1>Edit {{item.name}}</h1>
+<h1>Edit mode: {{item.name}}</h1>
 <br>
 <br>
 
@@ -27,7 +27,7 @@ id = "EditedItem">
 </div>
 <br>
 <br>
-
+<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
 <p>   <label for="description">Description:</label></p>
 <textarea class="form-control" maxlength="250" rows="3" name="description"  style="margin: 0px; width: 424px; height: 98px;">{{item.description}}</textarea>
 

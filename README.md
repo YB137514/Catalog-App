@@ -4,7 +4,7 @@ Application uses endangered animals families catalog to demonstrates CRUD operat
 
 ## Main Features
 
-Build with Flask Framework. Incorporates OAuth 2.0 protocol to login through Facebook and Google providers. Implements multiple file upload system. Uses python object-relational mapping (ORM) library SQLAlchemy to create database schema, populate, connect and query relational database. Implements JSON API endpoint on url: /catalog.json. Uses WTForms library for user input validation.
+Build with Flask Framework. Incorporates OAuth 2.0 protocol to login through Facebook and Google providers. Implements multiple file upload system. Uses python object-relational mapping (ORM) library SQLAlchemy to create database schema, populate, connect and query relational database. Implements JSON API endpoint on url: /catalog.json. Uses WTForms library for user input validation. Application prevents cross-site request forgery (CSRF) attacks.
 
  
 ## Installation:

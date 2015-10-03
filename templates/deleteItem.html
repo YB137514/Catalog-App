@@ -14,7 +14,7 @@
 <form action="{{ url_for('deleteItem', item_name= item.name, category_name = category.name)}}" method="post">
 
 	<input type='submit', value='Delete' style = "color: rgb(238, 13, 26);">
-
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
 
 </form>
 <br>
