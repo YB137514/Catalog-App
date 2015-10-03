@@ -147,7 +147,6 @@ def gconnect():
 
 
 # User Helper Functions
-
 def createUser(login_session):
     newUser = User(name=login_session['username'], email=login_session[
         'email'], picture=login_session['picture'])
@@ -274,7 +273,6 @@ def fbdisconnect():
 
 
 # Show all categories and items:
-
 @app.route('/')
 def AllCategories():
     categories = session.query(Category).order_by(asc(Category.name))
@@ -324,8 +322,6 @@ def SpecificCategory(category_name):
 
 
 # Show specific item description and pictures
-
-
 @app.route('/catalog/<category_name>/<item_name>')
 def SpecificItem(category_name, item_name):
     category = session.query(Category).filter_by(name=category_name).one()
@@ -405,9 +401,8 @@ def newItem():
             categories=categories,
             form=form)
 
+
 # Edit items on login
-
-
 @app.route('/catalog/<item_name>/edit', methods=['GET', 'POST'])
 def editItem(item_name):
 
@@ -499,9 +494,8 @@ def deleteItem(category_name, item_name):
             item=itemToDelete,
             category=category)
 
+
 # Making an API Endpoint (GET Request)
-
-
 @app.route('/catalog.json')
 def catalogJSON():
     # Access categories from database
@@ -533,9 +527,8 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
+
 # Helper function to rename picture names
-
-
 def Rename(filename):
     os.listdir('static/uploads')
     MyList = os.listdir('static/uploads')
@@ -545,9 +538,8 @@ def Rename(filename):
 
     return filename.replace('.jpg', '') + '_' + str(count) + '.jpg'
 
+
 # Disconnect based on provider
-
-
 @app.route('/disconnect')
 def disconnect():
     if 'provider' in login_session:
