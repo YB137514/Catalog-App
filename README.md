@@ -1,6 +1,6 @@
 # Catalog application
 
-Application uses endangered animals families catalog to demonstrates CRUD operations on the database (Create, Read, Update, Delete). 
+Application uses endangered animals families catalog to demonstrate CRUD operations on the database (Create, Read, Update, Delete). 
 
 ## Main Features
 
